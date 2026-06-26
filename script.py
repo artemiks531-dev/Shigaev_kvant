@@ -1,14 +1,20 @@
-def privet(who_from, **who_to):
-    who_to_list = []
-
-    items = list(who_to.items())
-    for item in items:
-        who_to_list.append(', '.join(item))
-
-    print(
-        f'вам привет от {who_from}!:\n'
-        f'кому: {'\n'.join(who_to_list)}\n'
-    )
-
-
-privet('artiom', raushan='hello bro', karim='krutoy')
+class Transport:
+    def __init__(self, name, speed):
+        self.name = name
+        self.speed = speed
+class Car(Transport):
+    def __init__(self, name, speed, kpp):
+        super().__init__(name, speed)
+        self.kpp = kpp
+class Bus(Transport):
+    def __init__(self, name, speed, konduktor):
+        super().__init__(name, speed)
+        self.konduktor = konduktor
+class Plane(Transport):
+    def __init__(self, name, speed, krilya):
+        super().__init__(name, speed)
+        self.krilya = krilya
+    def fly(self):
+        print('Я ЛЕЧУУУУУУУУУУУУУУУУУУУУУУ')
+plane = Plane("Plane", 0.1, 100)
+plane.fly()
